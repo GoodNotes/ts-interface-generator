@@ -1,0 +1,11 @@
+[
+  {
+    "targetFile": "src/Dashboard.generated.ts",
+    "sourceTypes": [
+      {
+        "file": "node_modules/@datadog/datadog-api-client/dist/packages/datadog-api-client-v1/models/Dashboard.d.ts",
+        "type": "Dashboard"
+      }
+    ]
+  }
+]
