@@ -11,6 +11,12 @@ const project = new cdk.JsiiProject({
   devDeps: ["@datadog/datadog-api-client", "ts-morph"],
   prettier: true,
   release: false,
+  autoApproveOptions: {
+    allowedUsernames: ["gn-devops-ci"],
+    // must be different Token from PROJEN_GITHUB_TOKEN to approve PR
+    secret: "GITHUB_TOKEN",
+  },
+  autoApproveUpgrades: true,
 });
 
 // Configuration to export the Dashboard API Object to an Interface
