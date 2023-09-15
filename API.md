@@ -4141,11 +4141,14 @@ const heatMapWidgetRequest: HeatMapWidgetRequest = { ... }
 | --- | --- | --- |
 | <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.apmQuery">apmQuery</a></code> | <code><a href="#ts-interface-generator.LogQueryDefinition">LogQueryDefinition</a></code> | The log query. |
 | <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.eventQuery">eventQuery</a></code> | <code><a href="#ts-interface-generator.EventQueryDefinition">EventQueryDefinition</a></code> | The event query. |
+| <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.formulas">formulas</a></code> | <code><a href="#ts-interface-generator.WidgetFormula">WidgetFormula</a>[]</code> | List of formulas that operate on queries. |
 | <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.logQuery">logQuery</a></code> | <code><a href="#ts-interface-generator.LogQueryDefinition">LogQueryDefinition</a></code> | The log query. |
 | <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.networkQuery">networkQuery</a></code> | <code><a href="#ts-interface-generator.LogQueryDefinition">LogQueryDefinition</a></code> | The log query. |
 | <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.processQuery">processQuery</a></code> | <code><a href="#ts-interface-generator.ProcessQueryDefinition">ProcessQueryDefinition</a></code> | The process query to use in the widget. |
 | <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.profileMetricsQuery">profileMetricsQuery</a></code> | <code><a href="#ts-interface-generator.LogQueryDefinition">LogQueryDefinition</a></code> | The log query. |
 | <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.q">q</a></code> | <code>string</code> | Widget query. |
+| <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.queries">queries</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| <a href="#ts-interface-generator.FormulaAndFunctionMetricQueryDefinition">FormulaAndFunctionMetricQueryDefinition</a> \| <a href="#ts-interface-generator.FormulaAndFunctionEventQueryDefinition">FormulaAndFunctionEventQueryDefinition</a> \| <a href="#ts-interface-generator.FormulaAndFunctionProcessQueryDefinition">FormulaAndFunctionProcessQueryDefinition</a> \| <a href="#ts-interface-generator.FormulaAndFunctionApmDependencyStatsQueryDefinition">FormulaAndFunctionApmDependencyStatsQueryDefinition</a> \| <a href="#ts-interface-generator.FormulaAndFunctionApmResourceStatsQueryDefinition">FormulaAndFunctionApmResourceStatsQueryDefinition</a> \| <a href="#ts-interface-generator.FormulaAndFunctionSLOQueryDefinition">FormulaAndFunctionSLOQueryDefinition</a> \| <a href="#ts-interface-generator.FormulaAndFunctionCloudCostQueryDefinition">FormulaAndFunctionCloudCostQueryDefinition</a>[]</code> | List of queries that can be returned directly or used in formulas. |
+| <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.responseFormat">responseFormat</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | Timeseries, scalar, or event list response. |
 | <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.rumQuery">rumQuery</a></code> | <code><a href="#ts-interface-generator.LogQueryDefinition">LogQueryDefinition</a></code> | The log query. |
 | <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.securityQuery">securityQuery</a></code> | <code><a href="#ts-interface-generator.LogQueryDefinition">LogQueryDefinition</a></code> | The log query. |
 | <code><a href="#ts-interface-generator.HeatMapWidgetRequest.property.style">style</a></code> | <code><a href="#ts-interface-generator.WidgetStyle">WidgetStyle</a></code> | Widget style definition. |
@@ -4173,6 +4176,18 @@ public readonly eventQuery: EventQueryDefinition;
 - *Type:* <a href="#ts-interface-generator.EventQueryDefinition">EventQueryDefinition</a>
 
 The event query.
+
+---
+
+##### `formulas`<sup>Optional</sup> <a name="formulas" id="ts-interface-generator.HeatMapWidgetRequest.property.formulas"></a>
+
+```typescript
+public readonly formulas: WidgetFormula[];
+```
+
+- *Type:* <a href="#ts-interface-generator.WidgetFormula">WidgetFormula</a>[]
+
+List of formulas that operate on queries.
 
 ---
 
@@ -4233,6 +4248,32 @@ public readonly q: string;
 - *Type:* string
 
 Widget query.
+
+---
+
+##### `queries`<sup>Optional</sup> <a name="queries" id="ts-interface-generator.HeatMapWidgetRequest.property.queries"></a>
+
+```typescript
+public readonly queries: UnparsedObject | FormulaAndFunctionMetricQueryDefinition | FormulaAndFunctionEventQueryDefinition | FormulaAndFunctionProcessQueryDefinition | FormulaAndFunctionApmDependencyStatsQueryDefinition | FormulaAndFunctionApmResourceStatsQueryDefinition | FormulaAndFunctionSLOQueryDefinition | FormulaAndFunctionCloudCostQueryDefinition[];
+```
+
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | <a href="#ts-interface-generator.FormulaAndFunctionMetricQueryDefinition">FormulaAndFunctionMetricQueryDefinition</a> | <a href="#ts-interface-generator.FormulaAndFunctionEventQueryDefinition">FormulaAndFunctionEventQueryDefinition</a> | <a href="#ts-interface-generator.FormulaAndFunctionProcessQueryDefinition">FormulaAndFunctionProcessQueryDefinition</a> | <a href="#ts-interface-generator.FormulaAndFunctionApmDependencyStatsQueryDefinition">FormulaAndFunctionApmDependencyStatsQueryDefinition</a> | <a href="#ts-interface-generator.FormulaAndFunctionApmResourceStatsQueryDefinition">FormulaAndFunctionApmResourceStatsQueryDefinition</a> | <a href="#ts-interface-generator.FormulaAndFunctionSLOQueryDefinition">FormulaAndFunctionSLOQueryDefinition</a> | <a href="#ts-interface-generator.FormulaAndFunctionCloudCostQueryDefinition">FormulaAndFunctionCloudCostQueryDefinition</a>[]
+
+List of queries that can be returned directly or used in formulas.
+
+---
+
+##### `responseFormat`<sup>Optional</sup> <a name="responseFormat" id="ts-interface-generator.HeatMapWidgetRequest.property.responseFormat"></a>
+
+```typescript
+public readonly responseFormat: UnparsedObject | string;
+```
+
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | string
+
+Timeseries, scalar, or event list response.
+
+Event list response formats are supported by Geomap widgets.
 
 ---
 
@@ -8092,6 +8133,7 @@ const sunburstWidgetRequest: SunburstWidgetRequest = { ... }
 | <code><a href="#ts-interface-generator.SunburstWidgetRequest.property.responseFormat">responseFormat</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | Timeseries, scalar, or event list response. |
 | <code><a href="#ts-interface-generator.SunburstWidgetRequest.property.rumQuery">rumQuery</a></code> | <code><a href="#ts-interface-generator.LogQueryDefinition">LogQueryDefinition</a></code> | The log query. |
 | <code><a href="#ts-interface-generator.SunburstWidgetRequest.property.securityQuery">securityQuery</a></code> | <code><a href="#ts-interface-generator.LogQueryDefinition">LogQueryDefinition</a></code> | The log query. |
+| <code><a href="#ts-interface-generator.SunburstWidgetRequest.property.style">style</a></code> | <code><a href="#ts-interface-generator.WidgetStyle">WidgetStyle</a></code> | Widget style definition. |
 
 ---
 
@@ -8250,6 +8292,18 @@ public readonly securityQuery: LogQueryDefinition;
 - *Type:* <a href="#ts-interface-generator.LogQueryDefinition">LogQueryDefinition</a>
 
 The log query.
+
+---
+
+##### `style`<sup>Optional</sup> <a name="style" id="ts-interface-generator.SunburstWidgetRequest.property.style"></a>
+
+```typescript
+public readonly style: WidgetStyle;
+```
+
+- *Type:* <a href="#ts-interface-generator.WidgetStyle">WidgetStyle</a>
+
+Widget style definition.
 
 ---
 

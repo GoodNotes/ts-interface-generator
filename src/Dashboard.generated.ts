@@ -718,7 +718,7 @@ export interface ListStreamQuery {
     /** Compute configuration for the List Stream Widget. Compute can be used only with the logs_transaction_stream (from 1 to 5 items) list stream source. */
     readonly "compute"?: Array<ListStreamComputeItems>;
     /** Source from which to query items to display in the stream. */
-    readonly "dataSource": "logs_stream" | "audit_stream" | "ci_pipeline_stream" | "ci_test_stream" | "rum_issue_stream" | "apm_issue_stream" | "logs_issue_stream" | "logs_pattern_stream" | "logs_transaction_stream" | "event_stream" | UnparsedObject;
+    readonly "dataSource": "logs_stream" | "audit_stream" | "ci_pipeline_stream" | "ci_test_stream" | "rum_issue_stream" | "apm_issue_stream" | "trace_stream" | "logs_issue_stream" | "logs_pattern_stream" | "logs_transaction_stream" | "event_stream" | UnparsedObject;
     /** Size to use to display an event. */
     readonly "eventSize"?: "s" | "l" | UnparsedObject;
     /** Group by configuration for the List Stream Widget. Group by can be used only with logs_pattern_stream (up to 3 items) or logs_transaction_stream (one group by item is required) list stream source. */
@@ -820,6 +820,8 @@ export interface HeatMapWidgetRequest {
     readonly "apmQuery"?: LogQueryDefinition;
     /** The event query. */
     readonly "eventQuery"?: EventQueryDefinition;
+    /** List of formulas that operate on queries. */
+    readonly "formulas"?: Array<WidgetFormula>;
     /** The log query. */
     readonly "logQuery"?: LogQueryDefinition;
     /** The log query. */
@@ -830,6 +832,10 @@ export interface HeatMapWidgetRequest {
     readonly "profileMetricsQuery"?: LogQueryDefinition;
     /** Widget query. */
     readonly "q"?: string;
+    /** List of queries that can be returned directly or used in formulas. */
+    readonly "queries"?: Array<FormulaAndFunctionMetricQueryDefinition | FormulaAndFunctionEventQueryDefinition | FormulaAndFunctionProcessQueryDefinition | FormulaAndFunctionApmDependencyStatsQueryDefinition | FormulaAndFunctionApmResourceStatsQueryDefinition | FormulaAndFunctionSLOQueryDefinition | FormulaAndFunctionCloudCostQueryDefinition | UnparsedObject>;
+    /** Timeseries, scalar, or event list response. Event list response formats are supported by Geomap widgets. */
+    readonly "responseFormat"?: "timeseries" | "scalar" | "event_list" | UnparsedObject;
     /** The log query. */
     readonly "rumQuery"?: LogQueryDefinition;
     /** The log query. */
@@ -1377,6 +1383,8 @@ export interface SunburstWidgetRequest {
     readonly "rumQuery"?: LogQueryDefinition;
     /** The log query. */
     readonly "securityQuery"?: LogQueryDefinition;
+    /** Widget style definition. */
+    readonly "style"?: WidgetStyle;
 }
 
 export interface TableWidgetDefinition {
