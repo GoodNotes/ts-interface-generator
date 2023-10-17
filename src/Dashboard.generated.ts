@@ -73,7 +73,7 @@ export interface DashboardTemplateVariable {
 
 export interface Widget {
     /** [Definition of the widget](https://docs.datadoghq.com/dashboards/widgets/). */
-    readonly "definition": AlertGraphWidgetDefinition | AlertValueWidgetDefinition | ChangeWidgetDefinition | CheckStatusWidgetDefinition | DistributionWidgetDefinition | EventStreamWidgetDefinition | EventTimelineWidgetDefinition | FreeTextWidgetDefinition | GeomapWidgetDefinition | GroupWidgetDefinition | HeatMapWidgetDefinition | HostMapWidgetDefinition | IFrameWidgetDefinition | ImageWidgetDefinition | LogStreamWidgetDefinition | MonitorSummaryWidgetDefinition | NoteWidgetDefinition | QueryValueWidgetDefinition | RunWorkflowWidgetDefinition | ScatterPlotWidgetDefinition | SLOWidgetDefinition | SLOListWidgetDefinition | ServiceMapWidgetDefinition | ServiceSummaryWidgetDefinition | SunburstWidgetDefinition | TableWidgetDefinition | TimeseriesWidgetDefinition | ToplistWidgetDefinition | TreeMapWidgetDefinition | ListStreamWidgetDefinition | FunnelWidgetDefinition | TopologyMapWidgetDefinition | UnparsedObject;
+    readonly "definition": AlertGraphWidgetDefinition | AlertValueWidgetDefinition | ChangeWidgetDefinition | CheckStatusWidgetDefinition | DistributionWidgetDefinition | EventStreamWidgetDefinition | EventTimelineWidgetDefinition | FreeTextWidgetDefinition | FunnelWidgetDefinition | GeomapWidgetDefinition | GroupWidgetDefinition | HeatMapWidgetDefinition | HostMapWidgetDefinition | IFrameWidgetDefinition | ImageWidgetDefinition | ListStreamWidgetDefinition | LogStreamWidgetDefinition | MonitorSummaryWidgetDefinition | NoteWidgetDefinition | PowerpackWidgetDefinition | QueryValueWidgetDefinition | RunWorkflowWidgetDefinition | SLOListWidgetDefinition | SLOWidgetDefinition | ScatterPlotWidgetDefinition | ServiceMapWidgetDefinition | ServiceSummaryWidgetDefinition | SplitGraphWidgetDefinition | SunburstWidgetDefinition | TableWidgetDefinition | TimeseriesWidgetDefinition | ToplistWidgetDefinition | TopologyMapWidgetDefinition | TreeMapWidgetDefinition | UnparsedObject;
     /** ID of the widget. */
     readonly "id"?: number;
     /** The layout for a widget on a `free` or **new dashboard layout** dashboard. */
@@ -660,6 +660,44 @@ export interface FreeTextWidgetDefinition {
     readonly "type": "free_text" | UnparsedObject;
 }
 
+export interface FunnelWidgetDefinition {
+    /** Request payload used to query items. */
+    readonly "requests": Array<FunnelWidgetRequest>;
+    /** Time setting for the widget. */
+    readonly "time"?: WidgetTime;
+    /** The title of the widget. */
+    readonly "title"?: string;
+    /** How to align the text on the widget. */
+    readonly "titleAlign"?: "center" | "left" | "right" | UnparsedObject;
+    /** The size of the title. */
+    readonly "titleSize"?: string;
+    /** Type of funnel widget. */
+    readonly "type": "funnel" | UnparsedObject;
+}
+
+export interface FunnelWidgetRequest {
+    /** Updated funnel widget. */
+    readonly "query": FunnelQuery;
+    /** Widget request type. */
+    readonly "requestType": "funnel" | UnparsedObject;
+}
+
+export interface FunnelQuery {
+    /** Source from which to query items to display in the funnel. */
+    readonly "dataSource": "rum" | UnparsedObject;
+    /** The widget query. */
+    readonly "queryString": string;
+    /** List of funnel steps. */
+    readonly "steps": Array<FunnelStep>;
+}
+
+export interface FunnelStep {
+    /** The facet of the step. */
+    readonly "facet": string;
+    /** The value of the step. */
+    readonly "value": string;
+}
+
 export interface GeomapWidgetDefinition {
     /** A list of custom links. */
     readonly "customLinks"?: Array<WidgetCustomLink>;
@@ -966,6 +1004,34 @@ export interface ImageWidgetDefinition {
     readonly "verticalAlign"?: "center" | "top" | "bottom" | UnparsedObject;
 }
 
+export interface ListStreamWidgetDefinition {
+    /** Available legend sizes for a widget. Should be one of "0", "2", "4", "8", "16", or "auto". */
+    readonly "legendSize"?: string;
+    /** Request payload used to query items. */
+    readonly "requests": Array<ListStreamWidgetRequest>;
+    /** Whether or not to display the legend on this widget. */
+    readonly "showLegend"?: boolean;
+    /** Time setting for the widget. */
+    readonly "time"?: WidgetTime;
+    /** Title of the widget. */
+    readonly "title"?: string;
+    /** How to align the text on the widget. */
+    readonly "titleAlign"?: "center" | "left" | "right" | UnparsedObject;
+    /** Size of the title. */
+    readonly "titleSize"?: string;
+    /** Type of the list stream widget. */
+    readonly "type": "list_stream" | UnparsedObject;
+}
+
+export interface ListStreamWidgetRequest {
+    /** Widget columns. */
+    readonly "columns": Array<ListStreamColumn>;
+    /** Updated list stream widget. */
+    readonly "query": ListStreamQuery;
+    /** Widget response format. */
+    readonly "responseFormat": "event_list" | UnparsedObject;
+}
+
 export interface LogStreamWidgetDefinition {
     /** Which columns to display on the widget. */
     readonly "columns"?: string[];
@@ -1047,6 +1113,39 @@ export interface NoteWidgetDefinition {
     readonly "type": "note" | UnparsedObject;
     /** Vertical alignment. */
     readonly "verticalAlign"?: "center" | "top" | "bottom" | UnparsedObject;
+}
+
+export interface PowerpackWidgetDefinition {
+    /** Background color of the powerpack title. */
+    readonly "backgroundColor"?: string;
+    /** URL of image to display as a banner for the powerpack. */
+    readonly "bannerImg"?: string;
+    /** UUID of the associated powerpack. */
+    readonly "powerpackId": string;
+    /** Whether to show the title or not. */
+    readonly "showTitle"?: boolean;
+    /** Powerpack template variables. */
+    readonly "templateVariables"?: PowerpackTemplateVariables;
+    /** Title of the widget. */
+    readonly "title"?: string;
+    /** Type of the powerpack widget. */
+    readonly "type": "powerpack" | UnparsedObject;
+}
+
+export interface PowerpackTemplateVariables {
+    /** Template variables controlled at the powerpack level. */
+    readonly "controlledByPowerpack"?: Array<PowerpackTemplateVariableContents>;
+    /** Template variables controlled by the external resource, such as the dashboard this powerpack is on. */
+    readonly "controlledExternally"?: Array<PowerpackTemplateVariableContents>;
+}
+
+export interface PowerpackTemplateVariableContents {
+    /** The name of the variable. */
+    readonly "name": string;
+    /** The tag prefix associated with the variable. */
+    readonly "prefix"?: string;
+    /** One or many template variable values within the saved view, which will be unioned together using `OR` if more than one is specified. */
+    readonly "values": string[];
 }
 
 export interface QueryValueWidgetDefinition {
@@ -1142,6 +1241,60 @@ export interface RunWorkflowWidgetInput {
     readonly "value": string;
 }
 
+export interface SLOListWidgetDefinition {
+    /** Array of one request object to display in the widget. */
+    readonly "requests": Array<SLOListWidgetRequest>;
+    /** Title of the widget. */
+    readonly "title"?: string;
+    /** How to align the text on the widget. */
+    readonly "titleAlign"?: "center" | "left" | "right" | UnparsedObject;
+    /** Size of the title. */
+    readonly "titleSize"?: string;
+    /** Type of the SLO List widget. */
+    readonly "type": "slo_list" | UnparsedObject;
+}
+
+export interface SLOListWidgetRequest {
+    /** Updated SLO List widget. */
+    readonly "query": SLOListWidgetQuery;
+    /** Widget request type. */
+    readonly "requestType": "slo_list" | UnparsedObject;
+}
+
+export interface SLOListWidgetQuery {
+    /** Maximum number of results to display in the table. */
+    readonly "limit"?: number;
+    /** Widget query. */
+    readonly "queryString": string;
+    /** Options for sorting results. */
+    readonly "sort"?: Array<WidgetFieldSort>;
+}
+
+export interface SLOWidgetDefinition {
+    /** Additional filters applied to the SLO query. */
+    readonly "additionalQueryFilters"?: string;
+    /** Defined global time target. */
+    readonly "globalTimeTarget"?: string;
+    /** Defined error budget. */
+    readonly "showErrorBudget"?: boolean;
+    /** ID of the SLO displayed. */
+    readonly "sloId"?: string;
+    /** Times being monitored. */
+    readonly "timeWindows"?: Array<"7d" | "30d" | "90d" | "week_to_date" | "previous_week" | "month_to_date" | "previous_month" | "global_time" | UnparsedObject>;
+    /** Title of the widget. */
+    readonly "title"?: string;
+    /** How to align the text on the widget. */
+    readonly "titleAlign"?: "center" | "left" | "right" | UnparsedObject;
+    /** Size of the title. */
+    readonly "titleSize"?: string;
+    /** Type of the SLO widget. */
+    readonly "type": "slo" | UnparsedObject;
+    /** Define how you want the SLO to be displayed. */
+    readonly "viewMode"?: "overall" | "component" | "both" | UnparsedObject;
+    /** Type of view displayed by the widget. */
+    readonly "viewType": string;
+}
+
 export interface ScatterPlotWidgetDefinition {
     /** List of groups used for colors. */
     readonly "colorByGroups"?: string[];
@@ -1215,60 +1368,6 @@ export interface ScatterPlotRequest {
     readonly "securityQuery"?: LogQueryDefinition;
 }
 
-export interface SLOWidgetDefinition {
-    /** Additional filters applied to the SLO query. */
-    readonly "additionalQueryFilters"?: string;
-    /** Defined global time target. */
-    readonly "globalTimeTarget"?: string;
-    /** Defined error budget. */
-    readonly "showErrorBudget"?: boolean;
-    /** ID of the SLO displayed. */
-    readonly "sloId"?: string;
-    /** Times being monitored. */
-    readonly "timeWindows"?: Array<"7d" | "30d" | "90d" | "week_to_date" | "previous_week" | "month_to_date" | "previous_month" | "global_time" | UnparsedObject>;
-    /** Title of the widget. */
-    readonly "title"?: string;
-    /** How to align the text on the widget. */
-    readonly "titleAlign"?: "center" | "left" | "right" | UnparsedObject;
-    /** Size of the title. */
-    readonly "titleSize"?: string;
-    /** Type of the SLO widget. */
-    readonly "type": "slo" | UnparsedObject;
-    /** Define how you want the SLO to be displayed. */
-    readonly "viewMode"?: "overall" | "component" | "both" | UnparsedObject;
-    /** Type of view displayed by the widget. */
-    readonly "viewType": string;
-}
-
-export interface SLOListWidgetDefinition {
-    /** Array of one request object to display in the widget. */
-    readonly "requests": Array<SLOListWidgetRequest>;
-    /** Title of the widget. */
-    readonly "title"?: string;
-    /** How to align the text on the widget. */
-    readonly "titleAlign"?: "center" | "left" | "right" | UnparsedObject;
-    /** Size of the title. */
-    readonly "titleSize"?: string;
-    /** Type of the SLO List widget. */
-    readonly "type": "slo_list" | UnparsedObject;
-}
-
-export interface SLOListWidgetRequest {
-    /** Updated SLO List widget. */
-    readonly "query": SLOListWidgetQuery;
-    /** Widget request type. */
-    readonly "requestType": "slo_list" | UnparsedObject;
-}
-
-export interface SLOListWidgetQuery {
-    /** Maximum number of results to display in the table. */
-    readonly "limit"?: number;
-    /** Widget query. */
-    readonly "queryString": string;
-    /** Options for sorting results. */
-    readonly "sort"?: Array<WidgetFieldSort>;
-}
-
 export interface ServiceMapWidgetDefinition {
     /** List of custom links. */
     readonly "customLinks"?: Array<WidgetCustomLink>;
@@ -1319,6 +1418,23 @@ export interface ServiceSummaryWidgetDefinition {
     readonly "titleSize"?: string;
     /** Type of the service summary widget. */
     readonly "type": "trace_service" | UnparsedObject;
+}
+
+export interface SplitGraphWidgetDefinition {
+    /** Normalize y axes across graphs */
+    readonly "hasUniformYAxes"?: boolean;
+    /** Size of the individual graphs in the split. */
+    readonly "size": "xs" | "sm" | "md" | "lg" | UnparsedObject;
+    /** The original widget we are splitting on. */
+    readonly "sourceWidgetDefinition": ChangeWidgetDefinition | GeomapWidgetDefinition | QueryValueWidgetDefinition | ScatterPlotWidgetDefinition | SunburstWidgetDefinition | TableWidgetDefinition | TimeseriesWidgetDefinition | ToplistWidgetDefinition | TreeMapWidgetDefinition | UnparsedObject;
+    /** Encapsulates all user choices about how to split a graph. */
+    readonly "splitConfig": SplitConfig;
+    /** Time setting for the widget. */
+    readonly "time"?: WidgetTime;
+    /** Title of your widget. */
+    readonly "title"?: string;
+    /** Type of the split graph widget */
+    readonly "type": "split_group" | UnparsedObject;
 }
 
 export interface SunburstWidgetDefinition {
@@ -1613,70 +1729,41 @@ export interface TreeMapWidgetRequest {
     readonly "responseFormat"?: "timeseries" | "scalar" | "event_list" | UnparsedObject;
 }
 
-export interface ListStreamWidgetDefinition {
-    /** Available legend sizes for a widget. Should be one of "0", "2", "4", "8", "16", or "auto". */
-    readonly "legendSize"?: string;
-    /** Request payload used to query items. */
-    readonly "requests": Array<ListStreamWidgetRequest>;
-    /** Whether or not to display the legend on this widget. */
-    readonly "showLegend"?: boolean;
-    /** Time setting for the widget. */
-    readonly "time"?: WidgetTime;
-    /** Title of the widget. */
-    readonly "title"?: string;
-    /** How to align the text on the widget. */
-    readonly "titleAlign"?: "center" | "left" | "right" | UnparsedObject;
-    /** Size of the title. */
-    readonly "titleSize"?: string;
-    /** Type of the list stream widget. */
-    readonly "type": "list_stream" | UnparsedObject;
+export interface SplitConfig {
+    /** Maximum number of graphs to display in the widget. */
+    readonly "limit": number;
+    /** Controls the order in which graphs appear in the split. */
+    readonly "sort": SplitSort;
+    /** The dimension(s) on which to split the graph */
+    readonly "splitDimensions": Array<SplitDimension>;
+    /** Manual selection of tags making split graph widget static */
+    readonly "staticSplits"?: Array<Array<SplitVectorEntryItem>>;
 }
 
-export interface ListStreamWidgetRequest {
-    /** Widget columns. */
-    readonly "columns": Array<ListStreamColumn>;
-    /** Updated list stream widget. */
-    readonly "query": ListStreamQuery;
-    /** Widget response format. */
-    readonly "responseFormat": "event_list" | UnparsedObject;
+export interface SplitSort {
+    /** Defines the metric and aggregation used as the sort value. */
+    readonly "compute"?: SplitConfigSortCompute;
+    /** Widget sorting methods. */
+    readonly "order": "asc" | "desc" | UnparsedObject;
 }
 
-export interface FunnelWidgetDefinition {
-    /** Request payload used to query items. */
-    readonly "requests": Array<FunnelWidgetRequest>;
-    /** Time setting for the widget. */
-    readonly "time"?: WidgetTime;
-    /** The title of the widget. */
-    readonly "title"?: string;
-    /** How to align the text on the widget. */
-    readonly "titleAlign"?: "center" | "left" | "right" | UnparsedObject;
-    /** The size of the title. */
-    readonly "titleSize"?: string;
-    /** Type of funnel widget. */
-    readonly "type": "funnel" | UnparsedObject;
+export interface SplitConfigSortCompute {
+    /** How to aggregate the sort metric for the purposes of ordering. */
+    readonly "aggregation": string;
+    /** The metric to use for sorting graphs. */
+    readonly "metric": string;
 }
 
-export interface FunnelWidgetRequest {
-    /** Updated funnel widget. */
-    readonly "query": FunnelQuery;
-    /** Widget request type. */
-    readonly "requestType": "funnel" | UnparsedObject;
+export interface SplitDimension {
+    /** The system interprets this attribute differently depending on the data source of the query being split. For metrics, it's a tag. For the events platform, it's an attribute or tag. */
+    readonly "oneGraphPer": string;
 }
 
-export interface FunnelQuery {
-    /** Source from which to query items to display in the funnel. */
-    readonly "dataSource": "rum" | UnparsedObject;
-    /** The widget query. */
-    readonly "queryString": string;
-    /** List of funnel steps. */
-    readonly "steps": Array<FunnelStep>;
-}
-
-export interface FunnelStep {
-    /** The facet of the step. */
-    readonly "facet": string;
-    /** The value of the step. */
-    readonly "value": string;
+export interface SplitVectorEntryItem {
+    /** The tag key. */
+    readonly "tagKey": string;
+    /** The tag values. */
+    readonly "tagValues": string[];
 }
 
 export interface TopologyMapWidgetDefinition {

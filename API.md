@@ -6124,6 +6124,213 @@ Vertical alignment.
 
 ---
 
+### PowerpackTemplateVariableContents <a name="PowerpackTemplateVariableContents" id="ts-interface-generator.PowerpackTemplateVariableContents"></a>
+
+#### Initializer <a name="Initializer" id="ts-interface-generator.PowerpackTemplateVariableContents.Initializer"></a>
+
+```typescript
+import { PowerpackTemplateVariableContents } from 'ts-interface-generator'
+
+const powerpackTemplateVariableContents: PowerpackTemplateVariableContents = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#ts-interface-generator.PowerpackTemplateVariableContents.property.name">name</a></code> | <code>string</code> | The name of the variable. |
+| <code><a href="#ts-interface-generator.PowerpackTemplateVariableContents.property.values">values</a></code> | <code>string[]</code> | One or many template variable values within the saved view, which will be unioned together using `OR` if more than one is specified. |
+| <code><a href="#ts-interface-generator.PowerpackTemplateVariableContents.property.prefix">prefix</a></code> | <code>string</code> | The tag prefix associated with the variable. |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="ts-interface-generator.PowerpackTemplateVariableContents.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+The name of the variable.
+
+---
+
+##### `values`<sup>Required</sup> <a name="values" id="ts-interface-generator.PowerpackTemplateVariableContents.property.values"></a>
+
+```typescript
+public readonly values: string[];
+```
+
+- *Type:* string[]
+
+One or many template variable values within the saved view, which will be unioned together using `OR` if more than one is specified.
+
+---
+
+##### `prefix`<sup>Optional</sup> <a name="prefix" id="ts-interface-generator.PowerpackTemplateVariableContents.property.prefix"></a>
+
+```typescript
+public readonly prefix: string;
+```
+
+- *Type:* string
+
+The tag prefix associated with the variable.
+
+---
+
+### PowerpackTemplateVariables <a name="PowerpackTemplateVariables" id="ts-interface-generator.PowerpackTemplateVariables"></a>
+
+#### Initializer <a name="Initializer" id="ts-interface-generator.PowerpackTemplateVariables.Initializer"></a>
+
+```typescript
+import { PowerpackTemplateVariables } from 'ts-interface-generator'
+
+const powerpackTemplateVariables: PowerpackTemplateVariables = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#ts-interface-generator.PowerpackTemplateVariables.property.controlledByPowerpack">controlledByPowerpack</a></code> | <code><a href="#ts-interface-generator.PowerpackTemplateVariableContents">PowerpackTemplateVariableContents</a>[]</code> | Template variables controlled at the powerpack level. |
+| <code><a href="#ts-interface-generator.PowerpackTemplateVariables.property.controlledExternally">controlledExternally</a></code> | <code><a href="#ts-interface-generator.PowerpackTemplateVariableContents">PowerpackTemplateVariableContents</a>[]</code> | Template variables controlled by the external resource, such as the dashboard this powerpack is on. |
+
+---
+
+##### `controlledByPowerpack`<sup>Optional</sup> <a name="controlledByPowerpack" id="ts-interface-generator.PowerpackTemplateVariables.property.controlledByPowerpack"></a>
+
+```typescript
+public readonly controlledByPowerpack: PowerpackTemplateVariableContents[];
+```
+
+- *Type:* <a href="#ts-interface-generator.PowerpackTemplateVariableContents">PowerpackTemplateVariableContents</a>[]
+
+Template variables controlled at the powerpack level.
+
+---
+
+##### `controlledExternally`<sup>Optional</sup> <a name="controlledExternally" id="ts-interface-generator.PowerpackTemplateVariables.property.controlledExternally"></a>
+
+```typescript
+public readonly controlledExternally: PowerpackTemplateVariableContents[];
+```
+
+- *Type:* <a href="#ts-interface-generator.PowerpackTemplateVariableContents">PowerpackTemplateVariableContents</a>[]
+
+Template variables controlled by the external resource, such as the dashboard this powerpack is on.
+
+---
+
+### PowerpackWidgetDefinition <a name="PowerpackWidgetDefinition" id="ts-interface-generator.PowerpackWidgetDefinition"></a>
+
+#### Initializer <a name="Initializer" id="ts-interface-generator.PowerpackWidgetDefinition.Initializer"></a>
+
+```typescript
+import { PowerpackWidgetDefinition } from 'ts-interface-generator'
+
+const powerpackWidgetDefinition: PowerpackWidgetDefinition = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#ts-interface-generator.PowerpackWidgetDefinition.property.powerpackId">powerpackId</a></code> | <code>string</code> | UUID of the associated powerpack. |
+| <code><a href="#ts-interface-generator.PowerpackWidgetDefinition.property.type">type</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | Type of the powerpack widget. |
+| <code><a href="#ts-interface-generator.PowerpackWidgetDefinition.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | Background color of the powerpack title. |
+| <code><a href="#ts-interface-generator.PowerpackWidgetDefinition.property.bannerImg">bannerImg</a></code> | <code>string</code> | URL of image to display as a banner for the powerpack. |
+| <code><a href="#ts-interface-generator.PowerpackWidgetDefinition.property.showTitle">showTitle</a></code> | <code>boolean</code> | Whether to show the title or not. |
+| <code><a href="#ts-interface-generator.PowerpackWidgetDefinition.property.templateVariables">templateVariables</a></code> | <code><a href="#ts-interface-generator.PowerpackTemplateVariables">PowerpackTemplateVariables</a></code> | Powerpack template variables. |
+| <code><a href="#ts-interface-generator.PowerpackWidgetDefinition.property.title">title</a></code> | <code>string</code> | Title of the widget. |
+
+---
+
+##### `powerpackId`<sup>Required</sup> <a name="powerpackId" id="ts-interface-generator.PowerpackWidgetDefinition.property.powerpackId"></a>
+
+```typescript
+public readonly powerpackId: string;
+```
+
+- *Type:* string
+
+UUID of the associated powerpack.
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="ts-interface-generator.PowerpackWidgetDefinition.property.type"></a>
+
+```typescript
+public readonly type: UnparsedObject | string;
+```
+
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | string
+
+Type of the powerpack widget.
+
+---
+
+##### `backgroundColor`<sup>Optional</sup> <a name="backgroundColor" id="ts-interface-generator.PowerpackWidgetDefinition.property.backgroundColor"></a>
+
+```typescript
+public readonly backgroundColor: string;
+```
+
+- *Type:* string
+
+Background color of the powerpack title.
+
+---
+
+##### `bannerImg`<sup>Optional</sup> <a name="bannerImg" id="ts-interface-generator.PowerpackWidgetDefinition.property.bannerImg"></a>
+
+```typescript
+public readonly bannerImg: string;
+```
+
+- *Type:* string
+
+URL of image to display as a banner for the powerpack.
+
+---
+
+##### `showTitle`<sup>Optional</sup> <a name="showTitle" id="ts-interface-generator.PowerpackWidgetDefinition.property.showTitle"></a>
+
+```typescript
+public readonly showTitle: boolean;
+```
+
+- *Type:* boolean
+
+Whether to show the title or not.
+
+---
+
+##### `templateVariables`<sup>Optional</sup> <a name="templateVariables" id="ts-interface-generator.PowerpackWidgetDefinition.property.templateVariables"></a>
+
+```typescript
+public readonly templateVariables: PowerpackTemplateVariables;
+```
+
+- *Type:* <a href="#ts-interface-generator.PowerpackTemplateVariables">PowerpackTemplateVariables</a>
+
+Powerpack template variables.
+
+---
+
+##### `title`<sup>Optional</sup> <a name="title" id="ts-interface-generator.PowerpackWidgetDefinition.property.title"></a>
+
+```typescript
+public readonly title: string;
+```
+
+- *Type:* string
+
+Title of the widget.
+
+---
+
 ### ProcessQueryDefinition <a name="ProcessQueryDefinition" id="ts-interface-generator.ProcessQueryDefinition"></a>
 
 #### Initializer <a name="Initializer" id="ts-interface-generator.ProcessQueryDefinition.Initializer"></a>
@@ -7883,6 +8090,344 @@ public readonly viewMode: UnparsedObject | string;
 - *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | string
 
 Define how you want the SLO to be displayed.
+
+---
+
+### SplitConfig <a name="SplitConfig" id="ts-interface-generator.SplitConfig"></a>
+
+#### Initializer <a name="Initializer" id="ts-interface-generator.SplitConfig.Initializer"></a>
+
+```typescript
+import { SplitConfig } from 'ts-interface-generator'
+
+const splitConfig: SplitConfig = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#ts-interface-generator.SplitConfig.property.limit">limit</a></code> | <code>number</code> | Maximum number of graphs to display in the widget. |
+| <code><a href="#ts-interface-generator.SplitConfig.property.sort">sort</a></code> | <code><a href="#ts-interface-generator.SplitSort">SplitSort</a></code> | Controls the order in which graphs appear in the split. |
+| <code><a href="#ts-interface-generator.SplitConfig.property.splitDimensions">splitDimensions</a></code> | <code><a href="#ts-interface-generator.SplitDimension">SplitDimension</a>[]</code> | The dimension(s) on which to split the graph. |
+| <code><a href="#ts-interface-generator.SplitConfig.property.staticSplits">staticSplits</a></code> | <code><a href="#ts-interface-generator.SplitVectorEntryItem">SplitVectorEntryItem</a>[][]</code> | Manual selection of tags making split graph widget static. |
+
+---
+
+##### `limit`<sup>Required</sup> <a name="limit" id="ts-interface-generator.SplitConfig.property.limit"></a>
+
+```typescript
+public readonly limit: number;
+```
+
+- *Type:* number
+
+Maximum number of graphs to display in the widget.
+
+---
+
+##### `sort`<sup>Required</sup> <a name="sort" id="ts-interface-generator.SplitConfig.property.sort"></a>
+
+```typescript
+public readonly sort: SplitSort;
+```
+
+- *Type:* <a href="#ts-interface-generator.SplitSort">SplitSort</a>
+
+Controls the order in which graphs appear in the split.
+
+---
+
+##### `splitDimensions`<sup>Required</sup> <a name="splitDimensions" id="ts-interface-generator.SplitConfig.property.splitDimensions"></a>
+
+```typescript
+public readonly splitDimensions: SplitDimension[];
+```
+
+- *Type:* <a href="#ts-interface-generator.SplitDimension">SplitDimension</a>[]
+
+The dimension(s) on which to split the graph.
+
+---
+
+##### `staticSplits`<sup>Optional</sup> <a name="staticSplits" id="ts-interface-generator.SplitConfig.property.staticSplits"></a>
+
+```typescript
+public readonly staticSplits: SplitVectorEntryItem[][];
+```
+
+- *Type:* <a href="#ts-interface-generator.SplitVectorEntryItem">SplitVectorEntryItem</a>[][]
+
+Manual selection of tags making split graph widget static.
+
+---
+
+### SplitConfigSortCompute <a name="SplitConfigSortCompute" id="ts-interface-generator.SplitConfigSortCompute"></a>
+
+#### Initializer <a name="Initializer" id="ts-interface-generator.SplitConfigSortCompute.Initializer"></a>
+
+```typescript
+import { SplitConfigSortCompute } from 'ts-interface-generator'
+
+const splitConfigSortCompute: SplitConfigSortCompute = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#ts-interface-generator.SplitConfigSortCompute.property.aggregation">aggregation</a></code> | <code>string</code> | How to aggregate the sort metric for the purposes of ordering. |
+| <code><a href="#ts-interface-generator.SplitConfigSortCompute.property.metric">metric</a></code> | <code>string</code> | The metric to use for sorting graphs. |
+
+---
+
+##### `aggregation`<sup>Required</sup> <a name="aggregation" id="ts-interface-generator.SplitConfigSortCompute.property.aggregation"></a>
+
+```typescript
+public readonly aggregation: string;
+```
+
+- *Type:* string
+
+How to aggregate the sort metric for the purposes of ordering.
+
+---
+
+##### `metric`<sup>Required</sup> <a name="metric" id="ts-interface-generator.SplitConfigSortCompute.property.metric"></a>
+
+```typescript
+public readonly metric: string;
+```
+
+- *Type:* string
+
+The metric to use for sorting graphs.
+
+---
+
+### SplitDimension <a name="SplitDimension" id="ts-interface-generator.SplitDimension"></a>
+
+#### Initializer <a name="Initializer" id="ts-interface-generator.SplitDimension.Initializer"></a>
+
+```typescript
+import { SplitDimension } from 'ts-interface-generator'
+
+const splitDimension: SplitDimension = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#ts-interface-generator.SplitDimension.property.oneGraphPer">oneGraphPer</a></code> | <code>string</code> | The system interprets this attribute differently depending on the data source of the query being split. |
+
+---
+
+##### `oneGraphPer`<sup>Required</sup> <a name="oneGraphPer" id="ts-interface-generator.SplitDimension.property.oneGraphPer"></a>
+
+```typescript
+public readonly oneGraphPer: string;
+```
+
+- *Type:* string
+
+The system interprets this attribute differently depending on the data source of the query being split.
+
+For metrics, it's a tag. For the events platform, it's an attribute or tag.
+
+---
+
+### SplitGraphWidgetDefinition <a name="SplitGraphWidgetDefinition" id="ts-interface-generator.SplitGraphWidgetDefinition"></a>
+
+#### Initializer <a name="Initializer" id="ts-interface-generator.SplitGraphWidgetDefinition.Initializer"></a>
+
+```typescript
+import { SplitGraphWidgetDefinition } from 'ts-interface-generator'
+
+const splitGraphWidgetDefinition: SplitGraphWidgetDefinition = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#ts-interface-generator.SplitGraphWidgetDefinition.property.size">size</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | Size of the individual graphs in the split. |
+| <code><a href="#ts-interface-generator.SplitGraphWidgetDefinition.property.sourceWidgetDefinition">sourceWidgetDefinition</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| <a href="#ts-interface-generator.ChangeWidgetDefinition">ChangeWidgetDefinition</a> \| <a href="#ts-interface-generator.GeomapWidgetDefinition">GeomapWidgetDefinition</a> \| <a href="#ts-interface-generator.QueryValueWidgetDefinition">QueryValueWidgetDefinition</a> \| <a href="#ts-interface-generator.ScatterPlotWidgetDefinition">ScatterPlotWidgetDefinition</a> \| <a href="#ts-interface-generator.SunburstWidgetDefinition">SunburstWidgetDefinition</a> \| <a href="#ts-interface-generator.TableWidgetDefinition">TableWidgetDefinition</a> \| <a href="#ts-interface-generator.TimeseriesWidgetDefinition">TimeseriesWidgetDefinition</a> \| <a href="#ts-interface-generator.ToplistWidgetDefinition">ToplistWidgetDefinition</a> \| <a href="#ts-interface-generator.TreeMapWidgetDefinition">TreeMapWidgetDefinition</a></code> | The original widget we are splitting on. |
+| <code><a href="#ts-interface-generator.SplitGraphWidgetDefinition.property.splitConfig">splitConfig</a></code> | <code><a href="#ts-interface-generator.SplitConfig">SplitConfig</a></code> | Encapsulates all user choices about how to split a graph. |
+| <code><a href="#ts-interface-generator.SplitGraphWidgetDefinition.property.type">type</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | Type of the split graph widget. |
+| <code><a href="#ts-interface-generator.SplitGraphWidgetDefinition.property.hasUniformYAxes">hasUniformYAxes</a></code> | <code>boolean</code> | Normalize y axes across graphs. |
+| <code><a href="#ts-interface-generator.SplitGraphWidgetDefinition.property.time">time</a></code> | <code><a href="#ts-interface-generator.WidgetTime">WidgetTime</a></code> | Time setting for the widget. |
+| <code><a href="#ts-interface-generator.SplitGraphWidgetDefinition.property.title">title</a></code> | <code>string</code> | Title of your widget. |
+
+---
+
+##### `size`<sup>Required</sup> <a name="size" id="ts-interface-generator.SplitGraphWidgetDefinition.property.size"></a>
+
+```typescript
+public readonly size: UnparsedObject | string;
+```
+
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | string
+
+Size of the individual graphs in the split.
+
+---
+
+##### `sourceWidgetDefinition`<sup>Required</sup> <a name="sourceWidgetDefinition" id="ts-interface-generator.SplitGraphWidgetDefinition.property.sourceWidgetDefinition"></a>
+
+```typescript
+public readonly sourceWidgetDefinition: UnparsedObject | ChangeWidgetDefinition | GeomapWidgetDefinition | QueryValueWidgetDefinition | ScatterPlotWidgetDefinition | SunburstWidgetDefinition | TableWidgetDefinition | TimeseriesWidgetDefinition | ToplistWidgetDefinition | TreeMapWidgetDefinition;
+```
+
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | <a href="#ts-interface-generator.ChangeWidgetDefinition">ChangeWidgetDefinition</a> | <a href="#ts-interface-generator.GeomapWidgetDefinition">GeomapWidgetDefinition</a> | <a href="#ts-interface-generator.QueryValueWidgetDefinition">QueryValueWidgetDefinition</a> | <a href="#ts-interface-generator.ScatterPlotWidgetDefinition">ScatterPlotWidgetDefinition</a> | <a href="#ts-interface-generator.SunburstWidgetDefinition">SunburstWidgetDefinition</a> | <a href="#ts-interface-generator.TableWidgetDefinition">TableWidgetDefinition</a> | <a href="#ts-interface-generator.TimeseriesWidgetDefinition">TimeseriesWidgetDefinition</a> | <a href="#ts-interface-generator.ToplistWidgetDefinition">ToplistWidgetDefinition</a> | <a href="#ts-interface-generator.TreeMapWidgetDefinition">TreeMapWidgetDefinition</a>
+
+The original widget we are splitting on.
+
+---
+
+##### `splitConfig`<sup>Required</sup> <a name="splitConfig" id="ts-interface-generator.SplitGraphWidgetDefinition.property.splitConfig"></a>
+
+```typescript
+public readonly splitConfig: SplitConfig;
+```
+
+- *Type:* <a href="#ts-interface-generator.SplitConfig">SplitConfig</a>
+
+Encapsulates all user choices about how to split a graph.
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="ts-interface-generator.SplitGraphWidgetDefinition.property.type"></a>
+
+```typescript
+public readonly type: UnparsedObject | string;
+```
+
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | string
+
+Type of the split graph widget.
+
+---
+
+##### `hasUniformYAxes`<sup>Optional</sup> <a name="hasUniformYAxes" id="ts-interface-generator.SplitGraphWidgetDefinition.property.hasUniformYAxes"></a>
+
+```typescript
+public readonly hasUniformYAxes: boolean;
+```
+
+- *Type:* boolean
+
+Normalize y axes across graphs.
+
+---
+
+##### `time`<sup>Optional</sup> <a name="time" id="ts-interface-generator.SplitGraphWidgetDefinition.property.time"></a>
+
+```typescript
+public readonly time: WidgetTime;
+```
+
+- *Type:* <a href="#ts-interface-generator.WidgetTime">WidgetTime</a>
+
+Time setting for the widget.
+
+---
+
+##### `title`<sup>Optional</sup> <a name="title" id="ts-interface-generator.SplitGraphWidgetDefinition.property.title"></a>
+
+```typescript
+public readonly title: string;
+```
+
+- *Type:* string
+
+Title of your widget.
+
+---
+
+### SplitSort <a name="SplitSort" id="ts-interface-generator.SplitSort"></a>
+
+#### Initializer <a name="Initializer" id="ts-interface-generator.SplitSort.Initializer"></a>
+
+```typescript
+import { SplitSort } from 'ts-interface-generator'
+
+const splitSort: SplitSort = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#ts-interface-generator.SplitSort.property.order">order</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | Widget sorting methods. |
+| <code><a href="#ts-interface-generator.SplitSort.property.compute">compute</a></code> | <code><a href="#ts-interface-generator.SplitConfigSortCompute">SplitConfigSortCompute</a></code> | Defines the metric and aggregation used as the sort value. |
+
+---
+
+##### `order`<sup>Required</sup> <a name="order" id="ts-interface-generator.SplitSort.property.order"></a>
+
+```typescript
+public readonly order: UnparsedObject | string;
+```
+
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | string
+
+Widget sorting methods.
+
+---
+
+##### `compute`<sup>Optional</sup> <a name="compute" id="ts-interface-generator.SplitSort.property.compute"></a>
+
+```typescript
+public readonly compute: SplitConfigSortCompute;
+```
+
+- *Type:* <a href="#ts-interface-generator.SplitConfigSortCompute">SplitConfigSortCompute</a>
+
+Defines the metric and aggregation used as the sort value.
+
+---
+
+### SplitVectorEntryItem <a name="SplitVectorEntryItem" id="ts-interface-generator.SplitVectorEntryItem"></a>
+
+#### Initializer <a name="Initializer" id="ts-interface-generator.SplitVectorEntryItem.Initializer"></a>
+
+```typescript
+import { SplitVectorEntryItem } from 'ts-interface-generator'
+
+const splitVectorEntryItem: SplitVectorEntryItem = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#ts-interface-generator.SplitVectorEntryItem.property.tagKey">tagKey</a></code> | <code>string</code> | The tag key. |
+| <code><a href="#ts-interface-generator.SplitVectorEntryItem.property.tagValues">tagValues</a></code> | <code>string[]</code> | The tag values. |
+
+---
+
+##### `tagKey`<sup>Required</sup> <a name="tagKey" id="ts-interface-generator.SplitVectorEntryItem.property.tagKey"></a>
+
+```typescript
+public readonly tagKey: string;
+```
+
+- *Type:* string
+
+The tag key.
+
+---
+
+##### `tagValues`<sup>Required</sup> <a name="tagValues" id="ts-interface-generator.SplitVectorEntryItem.property.tagValues"></a>
+
+```typescript
+public readonly tagValues: string[];
+```
+
+- *Type:* string[]
+
+The tag values.
 
 ---
 
@@ -9969,7 +10514,7 @@ const widget: Widget = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#ts-interface-generator.Widget.property.definition">definition</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| <a href="#ts-interface-generator.AlertGraphWidgetDefinition">AlertGraphWidgetDefinition</a> \| <a href="#ts-interface-generator.AlertValueWidgetDefinition">AlertValueWidgetDefinition</a> \| <a href="#ts-interface-generator.ChangeWidgetDefinition">ChangeWidgetDefinition</a> \| <a href="#ts-interface-generator.CheckStatusWidgetDefinition">CheckStatusWidgetDefinition</a> \| <a href="#ts-interface-generator.DistributionWidgetDefinition">DistributionWidgetDefinition</a> \| <a href="#ts-interface-generator.EventStreamWidgetDefinition">EventStreamWidgetDefinition</a> \| <a href="#ts-interface-generator.EventTimelineWidgetDefinition">EventTimelineWidgetDefinition</a> \| <a href="#ts-interface-generator.FreeTextWidgetDefinition">FreeTextWidgetDefinition</a> \| <a href="#ts-interface-generator.GeomapWidgetDefinition">GeomapWidgetDefinition</a> \| <a href="#ts-interface-generator.GroupWidgetDefinition">GroupWidgetDefinition</a> \| <a href="#ts-interface-generator.HeatMapWidgetDefinition">HeatMapWidgetDefinition</a> \| <a href="#ts-interface-generator.HostMapWidgetDefinition">HostMapWidgetDefinition</a> \| <a href="#ts-interface-generator.IFrameWidgetDefinition">IFrameWidgetDefinition</a> \| <a href="#ts-interface-generator.ImageWidgetDefinition">ImageWidgetDefinition</a> \| <a href="#ts-interface-generator.LogStreamWidgetDefinition">LogStreamWidgetDefinition</a> \| <a href="#ts-interface-generator.MonitorSummaryWidgetDefinition">MonitorSummaryWidgetDefinition</a> \| <a href="#ts-interface-generator.NoteWidgetDefinition">NoteWidgetDefinition</a> \| <a href="#ts-interface-generator.QueryValueWidgetDefinition">QueryValueWidgetDefinition</a> \| <a href="#ts-interface-generator.RunWorkflowWidgetDefinition">RunWorkflowWidgetDefinition</a> \| <a href="#ts-interface-generator.ScatterPlotWidgetDefinition">ScatterPlotWidgetDefinition</a> \| <a href="#ts-interface-generator.SLOWidgetDefinition">SLOWidgetDefinition</a> \| <a href="#ts-interface-generator.SLOListWidgetDefinition">SLOListWidgetDefinition</a> \| <a href="#ts-interface-generator.ServiceMapWidgetDefinition">ServiceMapWidgetDefinition</a> \| <a href="#ts-interface-generator.ServiceSummaryWidgetDefinition">ServiceSummaryWidgetDefinition</a> \| <a href="#ts-interface-generator.SunburstWidgetDefinition">SunburstWidgetDefinition</a> \| <a href="#ts-interface-generator.TableWidgetDefinition">TableWidgetDefinition</a> \| <a href="#ts-interface-generator.TimeseriesWidgetDefinition">TimeseriesWidgetDefinition</a> \| <a href="#ts-interface-generator.ToplistWidgetDefinition">ToplistWidgetDefinition</a> \| <a href="#ts-interface-generator.TreeMapWidgetDefinition">TreeMapWidgetDefinition</a> \| <a href="#ts-interface-generator.ListStreamWidgetDefinition">ListStreamWidgetDefinition</a> \| <a href="#ts-interface-generator.FunnelWidgetDefinition">FunnelWidgetDefinition</a> \| <a href="#ts-interface-generator.TopologyMapWidgetDefinition">TopologyMapWidgetDefinition</a></code> | [Definition of the widget](https://docs.datadoghq.com/dashboards/widgets/). |
+| <code><a href="#ts-interface-generator.Widget.property.definition">definition</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| <a href="#ts-interface-generator.AlertGraphWidgetDefinition">AlertGraphWidgetDefinition</a> \| <a href="#ts-interface-generator.AlertValueWidgetDefinition">AlertValueWidgetDefinition</a> \| <a href="#ts-interface-generator.ChangeWidgetDefinition">ChangeWidgetDefinition</a> \| <a href="#ts-interface-generator.CheckStatusWidgetDefinition">CheckStatusWidgetDefinition</a> \| <a href="#ts-interface-generator.DistributionWidgetDefinition">DistributionWidgetDefinition</a> \| <a href="#ts-interface-generator.EventStreamWidgetDefinition">EventStreamWidgetDefinition</a> \| <a href="#ts-interface-generator.EventTimelineWidgetDefinition">EventTimelineWidgetDefinition</a> \| <a href="#ts-interface-generator.FreeTextWidgetDefinition">FreeTextWidgetDefinition</a> \| <a href="#ts-interface-generator.FunnelWidgetDefinition">FunnelWidgetDefinition</a> \| <a href="#ts-interface-generator.GeomapWidgetDefinition">GeomapWidgetDefinition</a> \| <a href="#ts-interface-generator.GroupWidgetDefinition">GroupWidgetDefinition</a> \| <a href="#ts-interface-generator.HeatMapWidgetDefinition">HeatMapWidgetDefinition</a> \| <a href="#ts-interface-generator.HostMapWidgetDefinition">HostMapWidgetDefinition</a> \| <a href="#ts-interface-generator.IFrameWidgetDefinition">IFrameWidgetDefinition</a> \| <a href="#ts-interface-generator.ImageWidgetDefinition">ImageWidgetDefinition</a> \| <a href="#ts-interface-generator.ListStreamWidgetDefinition">ListStreamWidgetDefinition</a> \| <a href="#ts-interface-generator.LogStreamWidgetDefinition">LogStreamWidgetDefinition</a> \| <a href="#ts-interface-generator.MonitorSummaryWidgetDefinition">MonitorSummaryWidgetDefinition</a> \| <a href="#ts-interface-generator.NoteWidgetDefinition">NoteWidgetDefinition</a> \| <a href="#ts-interface-generator.PowerpackWidgetDefinition">PowerpackWidgetDefinition</a> \| <a href="#ts-interface-generator.QueryValueWidgetDefinition">QueryValueWidgetDefinition</a> \| <a href="#ts-interface-generator.RunWorkflowWidgetDefinition">RunWorkflowWidgetDefinition</a> \| <a href="#ts-interface-generator.SLOListWidgetDefinition">SLOListWidgetDefinition</a> \| <a href="#ts-interface-generator.SLOWidgetDefinition">SLOWidgetDefinition</a> \| <a href="#ts-interface-generator.ScatterPlotWidgetDefinition">ScatterPlotWidgetDefinition</a> \| <a href="#ts-interface-generator.ServiceMapWidgetDefinition">ServiceMapWidgetDefinition</a> \| <a href="#ts-interface-generator.ServiceSummaryWidgetDefinition">ServiceSummaryWidgetDefinition</a> \| <a href="#ts-interface-generator.SplitGraphWidgetDefinition">SplitGraphWidgetDefinition</a> \| <a href="#ts-interface-generator.SunburstWidgetDefinition">SunburstWidgetDefinition</a> \| <a href="#ts-interface-generator.TableWidgetDefinition">TableWidgetDefinition</a> \| <a href="#ts-interface-generator.TimeseriesWidgetDefinition">TimeseriesWidgetDefinition</a> \| <a href="#ts-interface-generator.ToplistWidgetDefinition">ToplistWidgetDefinition</a> \| <a href="#ts-interface-generator.TopologyMapWidgetDefinition">TopologyMapWidgetDefinition</a> \| <a href="#ts-interface-generator.TreeMapWidgetDefinition">TreeMapWidgetDefinition</a></code> | [Definition of the widget](https://docs.datadoghq.com/dashboards/widgets/). |
 | <code><a href="#ts-interface-generator.Widget.property.id">id</a></code> | <code>number</code> | ID of the widget. |
 | <code><a href="#ts-interface-generator.Widget.property.layout">layout</a></code> | <code><a href="#ts-interface-generator.WidgetLayout">WidgetLayout</a></code> | The layout for a widget on a `free` or **new dashboard layout** dashboard. |
 
@@ -9978,10 +10523,10 @@ const widget: Widget = { ... }
 ##### `definition`<sup>Required</sup> <a name="definition" id="ts-interface-generator.Widget.property.definition"></a>
 
 ```typescript
-public readonly definition: UnparsedObject | AlertGraphWidgetDefinition | AlertValueWidgetDefinition | ChangeWidgetDefinition | CheckStatusWidgetDefinition | DistributionWidgetDefinition | EventStreamWidgetDefinition | EventTimelineWidgetDefinition | FreeTextWidgetDefinition | GeomapWidgetDefinition | GroupWidgetDefinition | HeatMapWidgetDefinition | HostMapWidgetDefinition | IFrameWidgetDefinition | ImageWidgetDefinition | LogStreamWidgetDefinition | MonitorSummaryWidgetDefinition | NoteWidgetDefinition | QueryValueWidgetDefinition | RunWorkflowWidgetDefinition | ScatterPlotWidgetDefinition | SLOWidgetDefinition | SLOListWidgetDefinition | ServiceMapWidgetDefinition | ServiceSummaryWidgetDefinition | SunburstWidgetDefinition | TableWidgetDefinition | TimeseriesWidgetDefinition | ToplistWidgetDefinition | TreeMapWidgetDefinition | ListStreamWidgetDefinition | FunnelWidgetDefinition | TopologyMapWidgetDefinition;
+public readonly definition: UnparsedObject | AlertGraphWidgetDefinition | AlertValueWidgetDefinition | ChangeWidgetDefinition | CheckStatusWidgetDefinition | DistributionWidgetDefinition | EventStreamWidgetDefinition | EventTimelineWidgetDefinition | FreeTextWidgetDefinition | FunnelWidgetDefinition | GeomapWidgetDefinition | GroupWidgetDefinition | HeatMapWidgetDefinition | HostMapWidgetDefinition | IFrameWidgetDefinition | ImageWidgetDefinition | ListStreamWidgetDefinition | LogStreamWidgetDefinition | MonitorSummaryWidgetDefinition | NoteWidgetDefinition | PowerpackWidgetDefinition | QueryValueWidgetDefinition | RunWorkflowWidgetDefinition | SLOListWidgetDefinition | SLOWidgetDefinition | ScatterPlotWidgetDefinition | ServiceMapWidgetDefinition | ServiceSummaryWidgetDefinition | SplitGraphWidgetDefinition | SunburstWidgetDefinition | TableWidgetDefinition | TimeseriesWidgetDefinition | ToplistWidgetDefinition | TopologyMapWidgetDefinition | TreeMapWidgetDefinition;
 ```
 
-- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | <a href="#ts-interface-generator.AlertGraphWidgetDefinition">AlertGraphWidgetDefinition</a> | <a href="#ts-interface-generator.AlertValueWidgetDefinition">AlertValueWidgetDefinition</a> | <a href="#ts-interface-generator.ChangeWidgetDefinition">ChangeWidgetDefinition</a> | <a href="#ts-interface-generator.CheckStatusWidgetDefinition">CheckStatusWidgetDefinition</a> | <a href="#ts-interface-generator.DistributionWidgetDefinition">DistributionWidgetDefinition</a> | <a href="#ts-interface-generator.EventStreamWidgetDefinition">EventStreamWidgetDefinition</a> | <a href="#ts-interface-generator.EventTimelineWidgetDefinition">EventTimelineWidgetDefinition</a> | <a href="#ts-interface-generator.FreeTextWidgetDefinition">FreeTextWidgetDefinition</a> | <a href="#ts-interface-generator.GeomapWidgetDefinition">GeomapWidgetDefinition</a> | <a href="#ts-interface-generator.GroupWidgetDefinition">GroupWidgetDefinition</a> | <a href="#ts-interface-generator.HeatMapWidgetDefinition">HeatMapWidgetDefinition</a> | <a href="#ts-interface-generator.HostMapWidgetDefinition">HostMapWidgetDefinition</a> | <a href="#ts-interface-generator.IFrameWidgetDefinition">IFrameWidgetDefinition</a> | <a href="#ts-interface-generator.ImageWidgetDefinition">ImageWidgetDefinition</a> | <a href="#ts-interface-generator.LogStreamWidgetDefinition">LogStreamWidgetDefinition</a> | <a href="#ts-interface-generator.MonitorSummaryWidgetDefinition">MonitorSummaryWidgetDefinition</a> | <a href="#ts-interface-generator.NoteWidgetDefinition">NoteWidgetDefinition</a> | <a href="#ts-interface-generator.QueryValueWidgetDefinition">QueryValueWidgetDefinition</a> | <a href="#ts-interface-generator.RunWorkflowWidgetDefinition">RunWorkflowWidgetDefinition</a> | <a href="#ts-interface-generator.ScatterPlotWidgetDefinition">ScatterPlotWidgetDefinition</a> | <a href="#ts-interface-generator.SLOWidgetDefinition">SLOWidgetDefinition</a> | <a href="#ts-interface-generator.SLOListWidgetDefinition">SLOListWidgetDefinition</a> | <a href="#ts-interface-generator.ServiceMapWidgetDefinition">ServiceMapWidgetDefinition</a> | <a href="#ts-interface-generator.ServiceSummaryWidgetDefinition">ServiceSummaryWidgetDefinition</a> | <a href="#ts-interface-generator.SunburstWidgetDefinition">SunburstWidgetDefinition</a> | <a href="#ts-interface-generator.TableWidgetDefinition">TableWidgetDefinition</a> | <a href="#ts-interface-generator.TimeseriesWidgetDefinition">TimeseriesWidgetDefinition</a> | <a href="#ts-interface-generator.ToplistWidgetDefinition">ToplistWidgetDefinition</a> | <a href="#ts-interface-generator.TreeMapWidgetDefinition">TreeMapWidgetDefinition</a> | <a href="#ts-interface-generator.ListStreamWidgetDefinition">ListStreamWidgetDefinition</a> | <a href="#ts-interface-generator.FunnelWidgetDefinition">FunnelWidgetDefinition</a> | <a href="#ts-interface-generator.TopologyMapWidgetDefinition">TopologyMapWidgetDefinition</a>
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | <a href="#ts-interface-generator.AlertGraphWidgetDefinition">AlertGraphWidgetDefinition</a> | <a href="#ts-interface-generator.AlertValueWidgetDefinition">AlertValueWidgetDefinition</a> | <a href="#ts-interface-generator.ChangeWidgetDefinition">ChangeWidgetDefinition</a> | <a href="#ts-interface-generator.CheckStatusWidgetDefinition">CheckStatusWidgetDefinition</a> | <a href="#ts-interface-generator.DistributionWidgetDefinition">DistributionWidgetDefinition</a> | <a href="#ts-interface-generator.EventStreamWidgetDefinition">EventStreamWidgetDefinition</a> | <a href="#ts-interface-generator.EventTimelineWidgetDefinition">EventTimelineWidgetDefinition</a> | <a href="#ts-interface-generator.FreeTextWidgetDefinition">FreeTextWidgetDefinition</a> | <a href="#ts-interface-generator.FunnelWidgetDefinition">FunnelWidgetDefinition</a> | <a href="#ts-interface-generator.GeomapWidgetDefinition">GeomapWidgetDefinition</a> | <a href="#ts-interface-generator.GroupWidgetDefinition">GroupWidgetDefinition</a> | <a href="#ts-interface-generator.HeatMapWidgetDefinition">HeatMapWidgetDefinition</a> | <a href="#ts-interface-generator.HostMapWidgetDefinition">HostMapWidgetDefinition</a> | <a href="#ts-interface-generator.IFrameWidgetDefinition">IFrameWidgetDefinition</a> | <a href="#ts-interface-generator.ImageWidgetDefinition">ImageWidgetDefinition</a> | <a href="#ts-interface-generator.ListStreamWidgetDefinition">ListStreamWidgetDefinition</a> | <a href="#ts-interface-generator.LogStreamWidgetDefinition">LogStreamWidgetDefinition</a> | <a href="#ts-interface-generator.MonitorSummaryWidgetDefinition">MonitorSummaryWidgetDefinition</a> | <a href="#ts-interface-generator.NoteWidgetDefinition">NoteWidgetDefinition</a> | <a href="#ts-interface-generator.PowerpackWidgetDefinition">PowerpackWidgetDefinition</a> | <a href="#ts-interface-generator.QueryValueWidgetDefinition">QueryValueWidgetDefinition</a> | <a href="#ts-interface-generator.RunWorkflowWidgetDefinition">RunWorkflowWidgetDefinition</a> | <a href="#ts-interface-generator.SLOListWidgetDefinition">SLOListWidgetDefinition</a> | <a href="#ts-interface-generator.SLOWidgetDefinition">SLOWidgetDefinition</a> | <a href="#ts-interface-generator.ScatterPlotWidgetDefinition">ScatterPlotWidgetDefinition</a> | <a href="#ts-interface-generator.ServiceMapWidgetDefinition">ServiceMapWidgetDefinition</a> | <a href="#ts-interface-generator.ServiceSummaryWidgetDefinition">ServiceSummaryWidgetDefinition</a> | <a href="#ts-interface-generator.SplitGraphWidgetDefinition">SplitGraphWidgetDefinition</a> | <a href="#ts-interface-generator.SunburstWidgetDefinition">SunburstWidgetDefinition</a> | <a href="#ts-interface-generator.TableWidgetDefinition">TableWidgetDefinition</a> | <a href="#ts-interface-generator.TimeseriesWidgetDefinition">TimeseriesWidgetDefinition</a> | <a href="#ts-interface-generator.ToplistWidgetDefinition">ToplistWidgetDefinition</a> | <a href="#ts-interface-generator.TopologyMapWidgetDefinition">TopologyMapWidgetDefinition</a> | <a href="#ts-interface-generator.TreeMapWidgetDefinition">TreeMapWidgetDefinition</a>
 
 [Definition of the widget](https://docs.datadoghq.com/dashboards/widgets/).
 
