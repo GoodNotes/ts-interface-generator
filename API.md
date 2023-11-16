@@ -9798,6 +9798,7 @@ const toplistWidgetDefinition: ToplistWidgetDefinition = { ... }
 | <code><a href="#ts-interface-generator.ToplistWidgetDefinition.property.requests">requests</a></code> | <code><a href="#ts-interface-generator.ToplistWidgetRequest">ToplistWidgetRequest</a>[]</code> | List of top list widget requests. |
 | <code><a href="#ts-interface-generator.ToplistWidgetDefinition.property.type">type</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | Type of the top list widget. |
 | <code><a href="#ts-interface-generator.ToplistWidgetDefinition.property.customLinks">customLinks</a></code> | <code><a href="#ts-interface-generator.WidgetCustomLink">WidgetCustomLink</a>[]</code> | List of custom links. |
+| <code><a href="#ts-interface-generator.ToplistWidgetDefinition.property.style">style</a></code> | <code><a href="#ts-interface-generator.ToplistWidgetStyle">ToplistWidgetStyle</a></code> | Style customization for a top list widget. |
 | <code><a href="#ts-interface-generator.ToplistWidgetDefinition.property.time">time</a></code> | <code><a href="#ts-interface-generator.WidgetTime">WidgetTime</a></code> | Time setting for the widget. |
 | <code><a href="#ts-interface-generator.ToplistWidgetDefinition.property.title">title</a></code> | <code>string</code> | Title of your widget. |
 | <code><a href="#ts-interface-generator.ToplistWidgetDefinition.property.titleAlign">titleAlign</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | How to align the text on the widget. |
@@ -9838,6 +9839,18 @@ public readonly customLinks: WidgetCustomLink[];
 - *Type:* <a href="#ts-interface-generator.WidgetCustomLink">WidgetCustomLink</a>[]
 
 List of custom links.
+
+---
+
+##### `style`<sup>Optional</sup> <a name="style" id="ts-interface-generator.ToplistWidgetDefinition.property.style"></a>
+
+```typescript
+public readonly style: ToplistWidgetStyle;
+```
+
+- *Type:* <a href="#ts-interface-generator.ToplistWidgetStyle">ToplistWidgetStyle</a>
+
+Style customization for a top list widget.
 
 ---
 
@@ -9886,6 +9899,36 @@ public readonly titleSize: string;
 - *Type:* string
 
 Size of the title.
+
+---
+
+### ToplistWidgetFlat <a name="ToplistWidgetFlat" id="ts-interface-generator.ToplistWidgetFlat"></a>
+
+#### Initializer <a name="Initializer" id="ts-interface-generator.ToplistWidgetFlat.Initializer"></a>
+
+```typescript
+import { ToplistWidgetFlat } from 'ts-interface-generator'
+
+const toplistWidgetFlat: ToplistWidgetFlat = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#ts-interface-generator.ToplistWidgetFlat.property.type">type</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | Top list widget flat display type. |
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="ts-interface-generator.ToplistWidgetFlat.property.type"></a>
+
+```typescript
+public readonly type: UnparsedObject | string;
+```
+
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | string
+
+Top list widget flat display type.
 
 ---
 
@@ -10100,6 +10143,92 @@ public readonly style: WidgetRequestStyle;
 - *Type:* <a href="#ts-interface-generator.WidgetRequestStyle">WidgetRequestStyle</a>
 
 Define request widget style.
+
+---
+
+### ToplistWidgetStacked <a name="ToplistWidgetStacked" id="ts-interface-generator.ToplistWidgetStacked"></a>
+
+#### Initializer <a name="Initializer" id="ts-interface-generator.ToplistWidgetStacked.Initializer"></a>
+
+```typescript
+import { ToplistWidgetStacked } from 'ts-interface-generator'
+
+const toplistWidgetStacked: ToplistWidgetStacked = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#ts-interface-generator.ToplistWidgetStacked.property.legend">legend</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | Top list widget stacked legend behavior. |
+| <code><a href="#ts-interface-generator.ToplistWidgetStacked.property.type">type</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | Top list widget stacked display type. |
+
+---
+
+##### `legend`<sup>Required</sup> <a name="legend" id="ts-interface-generator.ToplistWidgetStacked.property.legend"></a>
+
+```typescript
+public readonly legend: UnparsedObject | string;
+```
+
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | string
+
+Top list widget stacked legend behavior.
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="ts-interface-generator.ToplistWidgetStacked.property.type"></a>
+
+```typescript
+public readonly type: UnparsedObject | string;
+```
+
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | string
+
+Top list widget stacked display type.
+
+---
+
+### ToplistWidgetStyle <a name="ToplistWidgetStyle" id="ts-interface-generator.ToplistWidgetStyle"></a>
+
+#### Initializer <a name="Initializer" id="ts-interface-generator.ToplistWidgetStyle.Initializer"></a>
+
+```typescript
+import { ToplistWidgetStyle } from 'ts-interface-generator'
+
+const toplistWidgetStyle: ToplistWidgetStyle = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#ts-interface-generator.ToplistWidgetStyle.property.display">display</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| <a href="#ts-interface-generator.ToplistWidgetStacked">ToplistWidgetStacked</a> \| <a href="#ts-interface-generator.ToplistWidgetFlat">ToplistWidgetFlat</a></code> | Top list widget display options. |
+| <code><a href="#ts-interface-generator.ToplistWidgetStyle.property.scaling">scaling</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | Top list widget scaling definition. |
+
+---
+
+##### `display`<sup>Optional</sup> <a name="display" id="ts-interface-generator.ToplistWidgetStyle.property.display"></a>
+
+```typescript
+public readonly display: UnparsedObject | ToplistWidgetStacked | ToplistWidgetFlat;
+```
+
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | <a href="#ts-interface-generator.ToplistWidgetStacked">ToplistWidgetStacked</a> | <a href="#ts-interface-generator.ToplistWidgetFlat">ToplistWidgetFlat</a>
+
+Top list widget display options.
+
+---
+
+##### `scaling`<sup>Optional</sup> <a name="scaling" id="ts-interface-generator.ToplistWidgetStyle.property.scaling"></a>
+
+```typescript
+public readonly scaling: UnparsedObject | string;
+```
+
+- *Type:* <a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> | string
+
+Top list widget scaling definition.
 
 ---
 

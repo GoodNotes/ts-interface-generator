@@ -1654,6 +1654,8 @@ export interface ToplistWidgetDefinition {
     readonly "customLinks"?: Array<WidgetCustomLink>;
     /** List of top list widget requests. */
     readonly "requests": Array<ToplistWidgetRequest>;
+    /** Style customization for a top list widget. */
+    readonly "style"?: ToplistWidgetStyle;
     /** Time setting for the widget. */
     readonly "time"?: WidgetTime;
     /** Title of your widget. */
@@ -1697,6 +1699,25 @@ export interface ToplistWidgetRequest {
     readonly "securityQuery"?: LogQueryDefinition;
     /** Define request widget style. */
     readonly "style"?: WidgetRequestStyle;
+}
+
+export interface ToplistWidgetStyle {
+    /** Top list widget display options. */
+    readonly "display"?: ToplistWidgetStacked | ToplistWidgetFlat | UnparsedObject;
+    /** Top list widget scaling definition. */
+    readonly "scaling"?: "absolute" | "relative" | UnparsedObject;
+}
+
+export interface ToplistWidgetStacked {
+    /** Top list widget stacked legend behavior. */
+    readonly "legend": "automatic" | "inline" | "none" | UnparsedObject;
+    /** Top list widget stacked display type. */
+    readonly "type": "stacked" | UnparsedObject;
+}
+
+export interface ToplistWidgetFlat {
+    /** Top list widget flat display type. */
+    readonly "type": "flat" | UnparsedObject;
 }
 
 export interface TreeMapWidgetDefinition {
