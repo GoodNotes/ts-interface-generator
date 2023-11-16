@@ -32,7 +32,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@datadog/datadog-api-client": "^1.18.0",
+    "@datadog/datadog-api-client": "^1.19.0",
     "@types/jest": "^29.5.8",
     "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^6",
