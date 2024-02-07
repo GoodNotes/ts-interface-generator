@@ -9,7 +9,11 @@ export interface Dashboard {
     readonly "description"?: string;
     /** ID of the dashboard. */
     readonly "id"?: string;
-    /** Whether this dashboard is read-only. If True, only the author and admins can make changes to it. Prefer using `restricted_roles` to manage write authorization. */
+    /**
+     * Whether this dashboard is read-only. If True, only the author and admins can make changes to it.
+     *
+     * This property is deprecated; please use the [Restriction Policies API](https://docs.datadoghq.com/api/latest/restriction-policies/) instead to manage write authorization for individual dashboards.
+     */
     readonly "isReadOnly"?: boolean;
     /** Layout type of the dashboard. */
     readonly "layoutType": "ordered" | "free" | UnparsedObject;
@@ -23,7 +27,11 @@ export interface Dashboard {
      * widgets should not have layouts.
      */
     readonly "reflowType"?: "auto" | "fixed" | UnparsedObject;
-    /** A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard. */
+    /**
+     * A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard.
+     *
+     * This property is deprecated; please use the [Restriction Policies API](https://docs.datadoghq.com/api/latest/restriction-policies/) instead to manage write authorization for individual dashboards.
+     */
     readonly "restrictedRoles"?: string[];
     /** List of team names representing ownership of a dashboard. */
     readonly "tags"?: string[];

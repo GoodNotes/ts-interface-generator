@@ -978,7 +978,7 @@ const dashboard: Dashboard = { ... }
 | <code><a href="#ts-interface-generator.Dashboard.property.createdAt">createdAt</a></code> | <code>Date</code> | Creation date of the dashboard. |
 | <code><a href="#ts-interface-generator.Dashboard.property.description">description</a></code> | <code>string</code> | Description of the dashboard. |
 | <code><a href="#ts-interface-generator.Dashboard.property.id">id</a></code> | <code>string</code> | ID of the dashboard. |
-| <code><a href="#ts-interface-generator.Dashboard.property.isReadOnly">isReadOnly</a></code> | <code>boolean</code> | Whether this dashboard is read-only. |
+| <code><a href="#ts-interface-generator.Dashboard.property.isReadOnly">isReadOnly</a></code> | <code>boolean</code> | Whether this dashboard is read-only. If True, only the author and admins can make changes to it. |
 | <code><a href="#ts-interface-generator.Dashboard.property.modifiedAt">modifiedAt</a></code> | <code>Date</code> | Modification date of the dashboard. |
 | <code><a href="#ts-interface-generator.Dashboard.property.notifyList">notifyList</a></code> | <code>string[]</code> | List of handles of users to notify when changes are made to this dashboard. |
 | <code><a href="#ts-interface-generator.Dashboard.property.reflowType">reflowType</a></code> | <code><a href="#ts-interface-generator.UnparsedObject">UnparsedObject</a> \| string</code> | Reflow type for a **new dashboard layout** dashboard. |
@@ -1094,9 +1094,9 @@ public readonly isReadOnly: boolean;
 
 - *Type:* boolean
 
-Whether this dashboard is read-only.
+Whether this dashboard is read-only. If True, only the author and admins can make changes to it.
 
-If True, only the author and admins can make changes to it. Prefer using `restricted_roles` to manage write authorization.
+This property is deprecated; please use the [Restriction Policies API](https://docs.datadoghq.com/api/latest/restriction-policies/) instead to manage write authorization for individual dashboards.
 
 ---
 
@@ -1151,6 +1151,8 @@ public readonly restrictedRoles: string[];
 A list of role identifiers.
 
 Only the author and users associated with at least one of these roles can edit this dashboard.
+
+This property is deprecated; please use the [Restriction Policies API](https://docs.datadoghq.com/api/latest/restriction-policies/) instead to manage write authorization for individual dashboards.
 
 ---
 
