@@ -32,7 +32,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@datadog/datadog-api-client": "^1.22.0",
+    "@datadog/datadog-api-client": "^1.23.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^6",
@@ -46,16 +46,16 @@
     "jest": "^29.7.0",
     "jest-junit": "^15",
     "jsii": "~5.0.0",
-    "jsii-diff": "^1.95.0",
+    "jsii-diff": "^1.96.0",
     "jsii-docgen": "^9.2.2",
-    "jsii-pacmak": "^1.95.0",
+    "jsii-pacmak": "^1.96.0",
     "jsii-rosetta": "~5.0.0",
     "prettier": "^3.2.5",
-    "projen": "^0.80.10",
+    "projen": "^0.80.14",
     "ts-jest": "^29.1.2",
     "ts-morph": "^19.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.3"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
